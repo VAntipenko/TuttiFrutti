@@ -1,0 +1,28 @@
+.cartItem {
+    display: flex;
+    padding: 24px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    position: relative;
+    img {
+        width: 150px;
+        height: 150px;
+    }
+    &__data {
+        display: flex;
+        flex-direction: column;
+    }
+    &__count {
+        margin-top: 15px;
+        button {
+            background: none;
+            border: none;
+        }
+    }
+    & > span {
+        position: absolute;
+        right: 24px;
+        bottom: 24px;
+    }
+}

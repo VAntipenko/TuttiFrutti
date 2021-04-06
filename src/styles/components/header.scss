@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 40px;
+    img {
+        height: 100%;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        button {
+            background: none;
+            border: none;
+            img {
+                height: 40px;
+            }
+        }
+    }
+}
