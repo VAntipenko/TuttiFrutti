@@ -1,9 +1,9 @@
 import React from "react";
 
-import cart from "assets/icons/cart.svg";
+import { Button } from "./Button";
 
 export const ProductItem = ({ item, handleAddToCart, handleRemoveFromCart }) => {
-    const { id, name, imgUrl, price, inCart } = item;
+    const { id, name, imgUrl, price, inCart, discount } = item;
 
     const handleAddInCart = () => {
         handleAddToCart(item);
@@ -15,21 +15,25 @@ export const ProductItem = ({ item, handleAddToCart, handleRemoveFromCart }) => 
 
     return (
         <div className='productItem'>
+            {discount && (
+                <div className='productItem__discount'>
+                    <span>discount</span>
+                </div>
+            )}
+
             <img src={imgUrl} alt='photo_url' />
-            <div className='productItem__data'>
-                <span>{name}</span>
+            <div className='productItem__info'>
+                <p>{name}</p>
                 <span>{`$${price}`}</span>
             </div>
             {!inCart ? (
-                <button onClick={handleAddInCart}>
+                <Button onClick={handleAddInCart} add>
                     Add to cart
-                    <img src={cart} alt='cart' />
-                </button>
+                </Button>
             ) : (
-                <button onClick={handleRemoveFromCartItem}>
-                    Remove from cart
-                    <img src={cart} alt='cart' />
-                </button>
+                <Button onClick={handleRemoveFromCartItem} remove>
+                    In the basket
+                </Button>
             )}
         </div>
     );

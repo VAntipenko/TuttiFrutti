@@ -1,0 +1,12 @@
+@import "../variables.scss";
+
+.cart {
+    width: 755px;
+    height: 528px;
+    margin: 0 auto;
+    background: $white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

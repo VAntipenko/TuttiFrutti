@@ -1,28 +1,72 @@
+@import "../variables.scss";
+
 .cartItem {
     display: flex;
-    padding: 24px;
-    width: 50%;
-    margin: 0 auto;
-    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
-    position: relative;
-    img {
-        width: 150px;
-        height: 150px;
+    height: 216px;
+    border-bottom: 2px solid #e2e2e2;
+    font-size: 24px;
+    margin-top: 16px;
+    & > img {
+        height: 100%;
+        width: 230px;
     }
-    &__data {
+    &__info {
+        font-family: "Poppins-Regular";
+        width: 100%;
+        & > span {
+            color: $orange;
+        }
+    }
+    &__title {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        img {
+            cursor: pointer;
+        }
     }
     &__count {
-        margin-top: 15px;
+        span {
+            cursor: pointer;
+            user-select: none;
+        }
+        &--input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Poppins-Regular";
+            input {
+                width: 55px;
+                height: 35px;
+                outline: none;
+                margin: 0 15px;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        color: $gray;
+        display: flex;
+        margin-top: 24px;
+        align-items: center;
         button {
             background: none;
             border: none;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            font-size: 24px;
+            margin: 0 16px;
         }
     }
-    & > span {
-        position: absolute;
-        right: 24px;
-        bottom: 24px;
+    .inputBuyButton {
+        background: $green;
+        color: $white;
+        font-family: "Poppins-Regular";
+        border-radius: 8px;
     }
 }
